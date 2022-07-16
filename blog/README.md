@@ -1,6 +1,6 @@
 # NewsFlash blog 
 
-created using HTML CSS And Javascript and the tutorial by FreeCodeCamp https://youtu.be/Aj7HLsJenVg
+created using HTML CSS And Javascript and the tutorial by <a href="https://youtu.be/Aj7HLsJenVg">FreeCodeCamp</a> 
 
 ![Project humbnail](./thumbnail.jpg)
 
