@@ -33,12 +33,14 @@ const sidebar = document.querySelector('aside');
 
 // show sidebar
 menuBtn.addEventListener('click', () => {
+    menuBtn.style.display = 'none';
     sidebar.style.display = 'block';
 })
 
 // close sidebar
 closeBtn.addEventListener('click', () => {
     sidebar.style.display = 'none';
+    menuBtn.style.display = 'inline';
 })
 
 // change theme
