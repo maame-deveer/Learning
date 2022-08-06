@@ -1,0 +1,338 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/*---------- Root Variables ----------*/
+:root{
+    --color-primary: #00c3f4;
+    --color-primary-variant: #0062fa;
+    --color-gradient: linear-gradient(var(--color-primary), var(--color-primary-variant));
+    --color-white: #fff;
+    --color-black: #000;
+
+    --container-width-lg: 80%;
+    --container-width-md: 92%;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--color-gradient);
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*---------- navbar ----------*/
+nav{
+    background: var(--color-white);
+    width: 100vw;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.container{
+    width: var(--container-width-lg);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-toggle-btn{
+    display: none;
+}
+
+.logo{
+    width: 5.4rem;
+    display: grid;
+    place-items: center;
+}
+
+.logo img{
+    width: 80%;
+    height: 62%;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    height: 100%;
+}
+
+.nav-links li{
+    height: 100%;
+}
+
+
+.nav-links li a{
+    color: var(--color-black);
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 400ms ease;
+    position: relative;
+}
+
+.nav-links li a:hover{
+    color: var(--color-primary);
+}
+
+.nav-links li a.active::after{
+    content: '';
+    display: block;
+    background: var(--color-primary);
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+section{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+section h1{
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+/*---------- Media Queries ----------*/
+
+/*----- tablets -----*/ /*also works on mobile devices since we are only dealing with nav bar*/
+@media screen and (max-width: 1024px){
+    .container{
+        width: var(--container-width-md);
+        position: relative;
+    }
+
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        display: none;
+        /* perspective: 350px; */
+    }
+
+    .nav-links li{
+        width: 100%;
+        box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.2);
+    }
+
+    /*--- Animation 1 ---*/
+    /* .nav-links li{
+        transform: rotate(-90deg) rotateY(90deg);
+        transform-origin: top right;
+        animation: animation1 1s ease forwards;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 300ms;
+        transform-origin: top left;
+        transform: rotate(90deg) rotateY(-90deg);
+    }
+
+    .nav-links li:nth-child(3){
+        animation-delay: 600ms;
+    }
+
+    .nav-links li:nth-child(4){
+        animation-delay: 900ms;
+        transform-origin: top left;
+        transform: rotate(90deg) rotateY(-90deg);
+    }
+
+    .nav-links li:nth-child(5){
+        animation-delay: 1200ms;
+    }
+
+    @keyframes animation1 {
+        to{
+            transform: rotate(0);
+            opacity: 1;
+        }
+    } */
+    /*--- End Of Animation 1 ---*/
+
+    /*--- Animation 2 ---*/
+    /* .nav-links li{
+        transform: rotateY(90deg) rotateX(90deg);
+        transform-origin: top right;
+        animation: animation2 1s ease forwards;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 300ms;
+    }
+
+    .nav-links li:nth-child(3){
+        animation-delay: 600ms;
+    }
+
+    .nav-links li:nth-child(4){
+        animation-delay: 900ms;
+    }
+
+    .nav-links li:nth-child(5){
+        animation-delay: 1200ms;
+    }
+
+    @keyframes animation2 {
+        to{
+            transform: rotate(0);
+            opacity: 1;
+        }
+    } */
+    /*--- End Of Animation 2 ---*/
+
+    /*--- Animation 3 ---*/
+    /* .nav-links li{
+        transform: rotateX(90deg);
+        transform-origin: top right;
+        animation: animation3 1s ease forwards;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 300ms;
+    }
+
+    .nav-links li:nth-child(3){
+        animation-delay: 600ms;
+    }
+
+    .nav-links li:nth-child(4){
+        animation-delay: 900ms;
+    }
+
+    .nav-links li:nth-child(5){
+        animation-delay: 1200ms;
+    }
+
+    @keyframes animation3 {
+        to{
+            transform: rotate(0);
+            opacity: 1;
+        }
+    } */
+    /*--- End Of Animation 3 ---*/
+
+    /*--- Animation 4 ---*/
+    /* .nav-links li{
+        transform-origin: top right;
+        animation: animation4 300ms ease forwards;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 300ms;
+    }
+
+    .nav-links li:nth-child(3){
+        animation-delay: 600ms;
+    }
+
+    .nav-links li:nth-child(4){
+        animation-delay: 900ms;
+    }
+
+    .nav-links li:nth-child(5){
+        animation-delay: 1200ms;
+    }
+
+    @keyframes animation4 {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1);
+            opacity: 1;
+        }
+    } */
+    /*--- End Of Animation 4 ---*/
+
+    /*--- Animation 5 ---*/
+    .nav-links li{
+        animation: animation5 1s ease forwards;
+        transform-origin: right;
+        /* transform: rotateY(-90deg) rotateX(-90deg); */
+        transform: rotateY(-90deg);
+    }
+
+    .nav-links li:nth-child(2){
+        animation-delay: 300ms;
+    }
+
+    .nav-links li:nth-child(3){
+        animation-delay: 600ms;
+    }
+
+    .nav-links li:nth-child(4){
+        animation-delay: 900ms;
+    }
+
+    .nav-links li:nth-child(5){
+        animation-delay: 1.2s;
+    }
+
+    @keyframes animation5 {
+        to{
+            transform: rotate(0);
+        }
+    }
+    /*--- End Of Animation 5 ---*/
+
+    .nav-links li a{
+        background: var(--color-white);
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 5rem 0 2.5rem;
+        border-top: 1px solid #b3d8e1;
+    }
+
+    .nav-links li a.active::after{
+        display: none;
+    }
+
+    .nav-toggle-btn{
+        display: inline-block;
+        font-size: 2rem;
+        color: var(--color-black);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    #nav-toggle-close{
+        display: none;
+    }
+
+    section h1{
+        font-size: 2.2rem;
+    }
+}
